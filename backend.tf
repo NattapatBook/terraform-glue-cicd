@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "s3-terraform-state-poc"
-    key    = "s3-github-action-terraform.tfstate"
+    key    = "s3-github-actions/terraform.tfstate"
     region = "ap-southeast-1"
   }
   required_providers {
