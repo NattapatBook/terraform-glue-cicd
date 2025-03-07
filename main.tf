@@ -6,9 +6,9 @@ resource "aws_s3_bucket" "test-tf-bucket" {
   }
 }
 
-# resource "aws_s3_object" "example" {
-#   key                    = "someobject"
-#   bucket                 = aws_s3_bucket.examplebucket.id
-#   source                 = "index.html"
+resource "aws_s3_object" "api_ingest" {
+  key                    = "scripts/api_ingest.py"
+  bucket                 = "aws-glue-assets-863518427397-ap-southeast-1"
+  source                 = "src/api_ingest.py"
 #   server_side_encryption = "aws:kms"
-# }
+}
