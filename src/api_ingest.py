@@ -6,10 +6,10 @@ from awsglue.context import GlueContext
 from awsglue.job import Job
 from awsglue.dynamicframe import DynamicFrame
 
-import openmeteo_requests
-import requests_cache
+# import openmeteo_requests
+# import requests_cache
 import pandas as pd
-from retry_requests import retry
+# from retry_requests import retry
 
 ## @params: [JOB_NAME]
 args = getResolvedOptions(sys.argv, ['JOB_NAME'])
