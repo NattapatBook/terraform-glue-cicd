@@ -10,6 +10,7 @@ resource "aws_s3_object" "api_ingest" {
   key                    = "scripts/api_ingest.py"
   bucket                 = "aws-glue-assets-863518427397-ap-southeast-1"
   source                 = "src/api_ingest.py"
+  etag                   = filemd5("src/api_ingest.py")
 #   server_side_encryption = "aws:kms"
 }
 
