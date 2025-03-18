@@ -1,2 +1,2 @@
 deploy_env="UAT"
-py_name=uat
+py_name="uat"
