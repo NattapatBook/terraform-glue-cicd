@@ -57,5 +57,5 @@ jobs:
       run: terraform plan --var-file=env/uat/terraform.tfvars -out=tfplan 
 
     - name: 'Terraform Apply'
-      if: github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/uat'
       run: terraform apply -auto-approve tfplan      
