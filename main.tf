@@ -15,7 +15,7 @@ resource "aws_s3_object" "api_ingest" {
 }
 
 resource "aws_glue_job" "glue_api_ingest_job" {
-  name     = "API Ingestion Test"
+  name     = "API Ingestion ${var.deploy_env}"
   role_arn = "arn:aws:iam::863518427397:role/tmg-glue-service-role"
   glue_version = "5.0"
   worker_type = "G.1X"
