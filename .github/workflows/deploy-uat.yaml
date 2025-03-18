@@ -3,10 +3,10 @@ name: Terraform CI/CD
 on:
   push:
     branches:
-      - main
+      - uat
   pull_request:
     branches:
-      - main
+      - uat
 
 jobs:
   terraform:
@@ -45,7 +45,7 @@ jobs:
       run: ls -ltr
 
     - name: 'Terraform Init'
-      run: terraform init --backend-config=env/dev/backend.hcl
+      run: terraform init --backend-config=env/uat/backend.hcl
 
     # - name: 'Terraform Format'
     #   run: terraform fmt
@@ -54,7 +54,7 @@ jobs:
     #   run: terraform validate
 
     - name: 'Terraform Plan'
-      run: terraform plan --var-file=env/dev/terraform.tfvars -out=tfplan
+      run: terraform plan --var-file=env/uat/terraform.tfvars -out=tfplan 
 
     - name: 'Terraform Apply'
       if: github.ref == 'refs/heads/main'
