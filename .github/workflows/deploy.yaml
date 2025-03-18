@@ -54,8 +54,8 @@ jobs:
     #   run: terraform validate
 
     - name: 'Terraform Plan'
-      run: terraform plan --var-file=”tfvars/dev/terraform.tfvars” -out=tfplan
+      run: terraform plan --var-file=”env/dev/terraform.tfvars” -out=tfplan
 
     - name: 'Terraform Apply'
       if: github.ref == 'refs/heads/main'
-      run: terraform apply --var-file=”tfvars/dev/terraform.tfvars” -auto-approve tfplan      
+      run: terraform apply --var-file=”env/dev/terraform.tfvars” -auto-approve tfplan      
